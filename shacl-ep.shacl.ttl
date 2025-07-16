@@ -59,7 +59,7 @@
   dcterms:created "2025-02-04"^^xsd:date;
   dcterms:modified "2025-12-06T00:00:00.000Z"^^xsd:dateTime;
   dcterms:dateCopyrighted "2025"^^xsd:gYear;
-  dcterms:license <https://www.europarl.europa.eu/legal-notice/>;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/>;
   dcterms:creator <https://publications.europa.eu/resource/authority/corporate-body/EP>;
   dcterms:publisher <https://publications.europa.eu/resource/authority/corporate-body/EP>;
   dcterms:rigthsHolder <https://publications.europa.eu/resource/authority/corporate-body/EURUN> .
@@ -70,7 +70,8 @@ shacl-ep:Person-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/person/[0-9]*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Aquamarine" .
+  shacl-play:background-color "Aquamarine";
+  rdfs:label "Person Node"@en .
 
 shacl-ep:Membership-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -78,7 +79,8 @@ shacl-ep:Membership-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/membership/[0-9]+-[f|m]-[0-9]+$";
   shacl-play:color "Black";
-  shacl-play:background-color "Aquamarine" .
+  shacl-play:background-color "Aquamarine";
+  rdfs:label "Membership Node"@en .
 
 shacl-ep:Organization-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -86,7 +88,18 @@ shacl-ep:Organization-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/org/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Aquamarine" .
+  shacl-play:background-color "Aquamarine";
+  rdfs:label "Organization Node"@en .
+
+shacl-ep:Organization-Committee-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2015-07-02: created"@en;
+  skos:example "https://data.europarl.europa.eu/org/AFET";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/org/[A-Z]{2,5}[0-9]{0,2}$";
+  shacl-play:color "Black";
+  shacl-play:background-color "Aquamarine";
+  rdfs:label "Organization Committee Node"@en .
 
 shacl-ep:ParliamentaryTerm-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -94,15 +107,17 @@ shacl-ep:ParliamentaryTerm-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/org/ep-[0-9][0-9]?$";
   shacl-play:color "Black";
-  shacl-play:background-color "Aquamarine" .
+  shacl-play:background-color "Aquamarine";
+  rdfs:label "ParliamentaryTerm Node"@en .
 
-shacl-ep:PeriodOfTme-Node a sh:NodeShape;
+shacl-ep:PeriodOfTime-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
   skos:example "https://data.europarl.europa.eu/time-period/pt_9";
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/time-period/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Aquamarine" .
+  shacl-play:background-color "Aquamarine";
+  rdfs:label "PeriodOfTime Node"@en .
 
 shacl-ep:ContactPoint-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -110,7 +125,8 @@ shacl-ep:ContactPoint-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/contact-point/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Aquamarine" .
+  shacl-play:background-color "Aquamarine";
+  rdfs:label "ContactPoint Node"@en .
 
 shacl-ep:OnlineAccount-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -119,7 +135,8 @@ shacl-ep:OnlineAccount-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https?://([a-z0-9\\-]+\\.)+[a-z]{2,}(/.*)?$";
   shacl-play:color "Black";
-  shacl-play:background-color "Aquamarine" .
+  shacl-play:background-color "Aquamarine";
+  rdfs:label "OnlineAccount Node"@en .
 
 shacl-ep:Voice-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -127,7 +144,8 @@ shacl-ep:Voice-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/tel/[0-9]*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Aquamarine" .
+  shacl-play:background-color "Aquamarine";
+  rdfs:label "Voice Node"@en .
 
 shacl-ep:Process-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -135,7 +153,68 @@ shacl-ep:Process-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/eli/dl/proc/[0-9]{4}-[0-9]{4}[A-Z]?$";
   shacl-play:color "White";
-  shacl-play:background-color "DarkRed" .
+  shacl-play:background-color "DarkRed";
+  rdfs:label "Process Node"@en .
+
+shacl-ep:Activity-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2015-07-02: created"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/event/2023-2121-ANPRO-2023-07-12";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/event/[A-Za-z0-9\\-_]+$";
+  shacl-play:color "White";
+  shacl-play:background-color "DarkBlue";
+  rdfs:label "Activity Node"@en .
+
+shacl-ep:Decision-DCPL-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2015-07-16: created"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/event/2021-0031-DEC-DCPL-2022-03-08";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/event/[0-9]{4}-[0-9]{4}[A-Z]?-DEC-DCPL-[0-9]{4}-[0-9]{2}-[0-9]{2}$";
+  shacl-play:color "White";
+  shacl-play:background-color "DodgerBlue";
+  rdfs:label "Decision DCPL Node"@en .
+
+shacl-ep:Decision-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2015-07-02: created"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/event/MTG-PL-2023-07-11-DEC-156726";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/event/MTG-PL-[0-9]{4}-[0-9]{2}-[0-9]{2}-DEC-[0-9]+$";
+  shacl-play:color "White";
+  shacl-play:background-color "DodgerBlue";
+  rdfs:label "Decision Node"@en .
+
+shacl-ep:ForeseenActivity-OJ-ITM-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2015-07-02: created"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/event/MTG-PL-2024-04-24-OJ-ITM-V-100";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/event/MTG-PL-[0-9]{4}-[0-9]{2}-[0-9]{2}-OJ-ITM-[D|V]-[0-9]+$";
+  shacl-play:color "White";
+  shacl-play:background-color "SlateGrey";
+  rdfs:label "ForeseenActivity OJ ITM Node"@en .
+
+shacl-ep:Activity-PVCRE-ITM-L1 a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2015-07-16: created"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/event/MTG-PL-2023-10-17-PVCRE-ITM-7";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/event/MTG-PL-[0-9]{4}-[0-9]{2}-[0-9]{2}-PVCRE-ITM-[1-9]([0-9]{0,2})?$";
+  shacl-play:color "White";
+  shacl-play:background-color "DarkBlue";
+  rdfs:label "Activity PVCRE ITM L1"@en .
+
+shacl-ep:Activity-PVCRE-ITM-L2 a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2015-07-16: created"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/event/MTG-PL-2023-10-17-PVCRE-ITM-7-8";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/event/MTG-PL-[0-9]{4}-[0-9]{2}-[0-9]{2}-PVCRE-ITM-[1-9]([0-9]{1,2})?-[1-9][0-9]{0,2}?$";
+  shacl-play:color "White";
+  shacl-play:background-color "DarkBlue";
+  rdfs:label "Activity PVCRE ITM L2"@en .
 
 shacl-ep:Work-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -143,7 +222,17 @@ shacl-ep:Work-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/.*$";
   shacl-play:color "White";
-  shacl-play:background-color "DarkOrange" .
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "Work Node"@en .
+
+shacl-ep:Work-Subdivision-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:example "https://data.europarl.europa.eu/eli/dl/doc/PV-10-2025-05-08-ITM-001";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/.*$";
+  shacl-play:color "White";
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "Work Subdivision Node"@en .
 
 shacl-ep:Work-TA-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -153,7 +242,8 @@ shacl-ep:Work-TA-Node a sh:NodeShape;
   sh:node shacl-ep:Work-Node;
   shacl-play:color "White";
   shacl-play:background-color "DarkOrange";
-  sh:property shacl-ep:P6, shacl-ep:P7 .
+  rdfs:label "Work TA Node"@en;
+  sh:property shacl-ep:Work-TA-Node_type, shacl-ep:Work-TA-Node_work_type .
 
 shacl-ep:Work-TA-ANN-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -162,7 +252,28 @@ shacl-ep:Work-TA-ANN-Node a sh:NodeShape;
   sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/TA-[0-9]{1,2}-[0-9]{4}-[0-9]{2}-[0-9]{2}-ANN[0-9]{2}$";
   sh:node shacl-ep:Work-Node;
   shacl-play:color "White";
-  shacl-play:background-color "DarkOrange" .
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "Work TA ANN Node"@en .
+
+shacl-ep:Work-TA-COR-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:example "https://data.europarl.europa.eu/eli/dl/doc/TA-9-2021-0362-COR01";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/TA-[0-9]{1,2}-[0-9]{4}-[0-9]{4}-COR[0-9]{2}$";
+  sh:node shacl-ep:Work-Node;
+  shacl-play:color "White";
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "Work TA COR Node"@en .
+
+shacl-ep:Work-TA-ANN-BudgetEpDraft a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2025-07-16: new"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/doc/TA-9-2023-04-20-ANN01";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/TA-[0-9]{1,2}-[0-9]{4}-[0-9]{2}-[0-9]{2}-ANN[0-9]{2}$";
+  shacl-play:color "White";
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "Work TA ANN BudgetEpDraft"@en .
 
 shacl-ep:Work-DCI-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -173,7 +284,8 @@ shacl-ep:Work-DCI-Node a sh:NodeShape;
   sh:node shacl-ep:Work-Node;
   shacl-play:color "White";
   shacl-play:background-color "DarkOrange";
-  sh:property shacl-ep:P9, shacl-ep:P10 .
+  rdfs:label "Work DCI Node"@en;
+  sh:property shacl-ep:Work-DCI-Node_type, shacl-ep:Work-DCI-Node_work_type .
 
 shacl-ep:Work-SP-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -183,7 +295,41 @@ shacl-ep:Work-SP-Node a sh:NodeShape;
   sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/SP-[0-9]{4}-[0-9]+(-[0-9]{1,2})?-TA-[0-9]{1,2}-[0-9]{4}-[0-9]{4}$";
   sh:node shacl-ep:Work-Node;
   shacl-play:color "White";
-  shacl-play:background-color "DarkOrange" .
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "Work SP Node"@en .
+
+shacl-ep:Work-PV-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2025-07-16: new"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/doc/PV-9-2024-01-16";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/PV-[0-9]{1,2}-[0-9]{4}-[0-9]{2}-[0-9]{2}$";
+  sh:node shacl-ep:Work-Node;
+  shacl-play:color "White";
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "Work PV Node"@en .
+
+shacl-ep:Work-PV-ITM-L1-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2025-07-16: new"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/doc/PV-9-2024-01-17-ITM-008";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/PV-[0-9]{1,2}-[0-9]{4}-[0-9]{2}-[0-9]{2}-ITM-[0-9]{3}D?$";
+  sh:node shacl-ep:Work-Node;
+  shacl-play:color "White";
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "Work PV ITM L1 Node"@en .
+
+shacl-ep:Work-PV-ITM-L2-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2025-07-16: new"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/doc/PV-9-2024-01-17-ITM-008-01";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/PV-[0-9]{1,2}-[0-9]{4}-[0-9]{2}-[0-9]{2}-ITM-[0-9]{3}-[0-9]{2}$";
+  sh:node shacl-ep:Work-Node;
+  shacl-play:color "White";
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "Work PV ITM L2 Node"@en .
 
 shacl-ep:LegalResource-RULES-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -193,7 +339,8 @@ shacl-ep:LegalResource-RULES-Node a sh:NodeShape;
   sh:node shacl-ep:Work-Node;
   shacl-play:color "White";
   shacl-play:background-color "DarkOrange";
-  sh:property shacl-ep:P12, shacl-ep:P13 .
+  rdfs:label "LegalResource RULES Node"@en;
+  sh:property shacl-ep:LegalResource-RULES-Node_type, shacl-ep:LegalResource-RULES-Node_work_type .
 
 shacl-ep:LegalResourceSubdivision-ART-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -201,7 +348,8 @@ shacl-ep:LegalResourceSubdivision-ART-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/RULES-[0-9]{1,2}-[0-9]{4}-[0-9]{2}-[0-9]{2}/art_[0-9]+[a-z]?$";
   shacl-play:color "White";
-  shacl-play:background-color "DarkOrange" .
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "LegalResourceSubdivision ART Node"@en .
 
 shacl-ep:LegalResourceSubdivision-PAR-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -209,24 +357,27 @@ shacl-ep:LegalResourceSubdivision-PAR-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/RULES-[0-9]{1,2}-[0-9]{4}-[0-9]{2}-[0-9]{2}/art_\\d+[a-z]?/par_\\d+$";
   shacl-play:color "White";
-  shacl-play:background-color "DarkOrange" .
+  shacl-play:background-color "DarkOrange";
+  rdfs:label "LegalResourceSubdivision PAR Node"@en .
 
 shacl-ep:Expression-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
   skos:example "https://data.europarl.europa.eu/eli/dl/doc/DCI-197491-2024-07-19-123456/en";
   sh:nodeKind sh:IRI;
-  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/.*/[a-z]{2,3}$";
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/[A-Za-z0-9\\-_]+/[a-z][a-z]$";
   shacl-play:color "White";
-  shacl-play:background-color "CornflowerBlue" .
+  shacl-play:background-color "CornflowerBlue";
+  rdfs:label "Expression Node"@en .
 
 shacl-ep:Manifestation-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
   skos:editorialNote "2025-06-12: fix pattern"@en;
   skos:example "https://data.europarl.europa.eu/eli/dl/doc/DCI-197491-2024-07-19-123456/en/pdf";
   sh:nodeKind sh:IRI;
-  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/.*/[a-z]{2,3}/[a-z]+$";
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/doc/[A-Za-z0-9\\-_]+/[a-z][a-z]/.*$";
   shacl-play:color "White";
-  shacl-play:background-color "LimeGreen" .
+  shacl-play:background-color "LimeGreen";
+  rdfs:label "Manifestation Node"@en .
 
 shacl-ep:Participation-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -235,7 +386,28 @@ shacl-ep:Participation-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/eli/dl/participation/[A-Za-z0-9\\-_]+$";
   shacl-play:color "Black";
-  shacl-play:background-color "FloralWhite" .
+  shacl-play:background-color "FloralWhite";
+  rdfs:label "Participation Node"@en .
+
+shacl-ep:Participation-Org-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2015-07-02: created"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/participation/2021-0031-MAIN-ITRE";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/participation/[0-9]{4}-[0-9]{4}[A-Z]?-[A-Z]{3,4}-[A-Z]{2,5}[0-9]{0,2}$";
+  shacl-play:color "Black";
+  shacl-play:background-color "FloralWhite";
+  rdfs:label "Participation Org Node"@en .
+
+shacl-ep:Participation-Person-Node a sh:NodeShape;
+  owl:versionInfo "3.2.0";
+  skos:editorialNote "2015-07-02: created"@en;
+  skos:example "https://data.europarl.europa.eu/eli/dl/participation/2021-0031-NMCP-1234-AGRI-2021-10-13";
+  sh:nodeKind sh:IRI;
+  sh:pattern "^https://data.europarl.europa.eu/eli/dl/participation/[0-9]{4}-[0-9]{4}[A-Z]?-[NMCP|NMCOR|NMSR]-[0-9]+-[A-Z]{2,5}[0-9]{0,2}-[0-9]{4}-[0-9]{2}-[0-9]{2}$";
+  shacl-play:color "Black";
+  shacl-play:background-color "FloralWhite";
+  rdfs:label "Participation Person Node"@en .
 
 shacl-ep:ForeseenCapacity-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -244,7 +416,8 @@ shacl-ep:ForeseenCapacity-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/eli/dl/capacity/.*$";
   shacl-play:color "White";
-  shacl-play:background-color "Wheat" .
+  shacl-play:background-color "Wheat";
+  rdfs:label "ForeseenCapacity Node"@en .
 
 shacl-ep:Role-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -253,7 +426,8 @@ shacl-ep:Role-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/def/ep-roles/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "Role Node"@en .
 
 shacl-ep:WorkType-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -261,7 +435,8 @@ shacl-ep:WorkType-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/def/ep-document-types/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "WorkType Node"@en .
 
 shacl-ep:ActivityType-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -269,7 +444,8 @@ shacl-ep:ActivityType-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/def/ep-activities/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "ActivityType Node"@en .
 
 shacl-ep:ProcessType-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -277,7 +453,8 @@ shacl-ep:ProcessType-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/def/ep-procedure-types/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "ProcessType Node"@en .
 
 shacl-ep:DecisionMethod-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -285,7 +462,8 @@ shacl-ep:DecisionMethod-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/def/ep-decision-methods/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "DecisionMethod Node"@en .
 
 shacl-ep:DecisionOutcome-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -293,7 +471,8 @@ shacl-ep:DecisionOutcome-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/def/ep-statuses/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "DecisionOutcome Node"@en .
 
 shacl-ep:CorporateBodyClassification-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -301,7 +480,8 @@ shacl-ep:CorporateBodyClassification-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://data.europarl.europa.eu/def/ep-entities/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "CorporateBodyClassification Node"@en .
 
 shacl-ep:Gender-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -309,7 +489,8 @@ shacl-ep:Gender-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/human-sex/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "Gender Node"@en .
 
 shacl-ep:HonorificTitle-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -317,7 +498,8 @@ shacl-ep:HonorificTitle-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/honorific/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "HonorificTitle Node"@en .
 
 shacl-ep:AddressType-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -325,7 +507,8 @@ shacl-ep:AddressType-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/address-type/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "AddressType Node"@en .
 
 shacl-ep:LinguisticSystem-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -334,7 +517,8 @@ shacl-ep:LinguisticSystem-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/language/[A-Z]+$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "LinguisticSystem Node"@en .
 
 shacl-ep:Country-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -342,7 +526,8 @@ shacl-ep:Country-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/country/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "Country Node"@en .
 
 shacl-ep:Location-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -350,7 +535,8 @@ shacl-ep:Location-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/place/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "Location Node"@en .
 
 shacl-ep:FileStatus-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -358,7 +544,8 @@ shacl-ep:FileStatus-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/file-status/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "FileStatus Node"@en .
 
 shacl-ep:Site-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -366,7 +553,8 @@ shacl-ep:Site-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/site/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "Site Node"@en .
 
 shacl-ep:SubdivisionType-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -374,7 +562,8 @@ shacl-ep:SubdivisionType-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/subdivision/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "SubdivisionType Node"@en .
 
 shacl-ep:ProcessStage-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -382,7 +571,8 @@ shacl-ep:ProcessStage-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/procedure-phase/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "ProcessStage Node"@en .
 
 shacl-ep:MediaTypeOrExtent-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -390,7 +580,8 @@ shacl-ep:MediaTypeOrExtent-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/file-type/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "MediaTypeOrExtent Node"@en .
 
 shacl-ep:MediaType-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -398,7 +589,8 @@ shacl-ep:MediaType-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^https://www.iana.org/assignments/media-types/application/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "MediaType Node"@en .
 
 shacl-ep:Concept-Eurovoc-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -407,7 +599,8 @@ shacl-ep:Concept-Eurovoc-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://eurovoc.europa.eu/[0-9]+$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "Concept Eurovoc Node"@en .
 
 shacl-ep:Concept-SubjectMatter-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -416,7 +609,8 @@ shacl-ep:Concept-SubjectMatter-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/subject-matter/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "Concept SubjectMatter Node"@en .
 
 shacl-ep:Concept-DirEuLegalAct-Node a sh:NodeShape;
   owl:versionInfo "3.2.0";
@@ -425,44 +619,45 @@ shacl-ep:Concept-DirEuLegalAct-Node a sh:NodeShape;
   sh:nodeKind sh:IRI;
   sh:pattern "^http://publications.europa.eu/resource/authority/dir-eu-legal-act/.*$";
   shacl-play:color "Black";
-  shacl-play:background-color "Khaki" .
+  shacl-play:background-color "Khaki";
+  rdfs:label "Concept DirEuLegalAct Node"@en .
 
-shacl-ep:P6 owl:versionInfo "3.2.0";
+shacl-ep:Work-TA-Node_type owl:versionInfo "3.2.0";
   sh:path rdf:type;
   sh:name "type"@en;
   sh:nodeKind sh:IRI;
   sh:hasValue eli:Work;
   sh:deactivated "true"^^xsd:boolean .
 
-shacl-ep:P7 owl:versionInfo "3.2.0";
+shacl-ep:Work-TA-Node_work_type owl:versionInfo "3.2.0";
   sh:path eli:work_type;
   sh:name "work type"@en;
   sh:nodeKind sh:IRI;
   sh:hasValue ep-document-types:TEXT_ADOPTED;
   sh:deactivated "true"^^xsd:boolean .
 
-shacl-ep:P9 owl:versionInfo "3.2.0";
+shacl-ep:Work-DCI-Node_type owl:versionInfo "3.2.0";
   sh:path rdf:type;
   sh:name "type"@en;
   sh:nodeKind sh:IRI;
   sh:hasValue eli:Work;
   sh:deactivated "true"^^xsd:boolean .
 
-shacl-ep:P10 owl:versionInfo "3.2.0";
+shacl-ep:Work-DCI-Node_work_type owl:versionInfo "3.2.0";
   sh:path eli:work_type;
   sh:name "work type"@en;
   sh:nodeKind sh:IRI;
   sh:hasValue ep-document-types:MEMBER_DECLARATION_INTEREST_CONFLICT;
   sh:deactivated "true"^^xsd:boolean .
 
-shacl-ep:P12 owl:versionInfo "3.x.0";
+shacl-ep:LegalResource-RULES-Node_type owl:versionInfo "3.x.0";
   sh:path rdf:type;
   sh:name "type"@en;
   sh:nodeKind sh:IRI;
   sh:hasValue eli:LegalResource;
   sh:deactivated "true"^^xsd:boolean .
 
-shacl-ep:P13 owl:versionInfo "3.x.0";
+shacl-ep:LegalResource-RULES-Node_work_type owl:versionInfo "3.x.0";
   sh:path eli:work_type;
   sh:name "work type"@en;
   sh:nodeKind sh:IRI;
